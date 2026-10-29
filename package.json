@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-tech-feeds",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Tech Feeds MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-tech-feeds": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "tech-feeds"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-tech-feeds.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/tech-feeds",
   "pipeworx": {
-    "sourceHash": "v1-cd13536980d450b34a38c340b97dffbb48df322ec9cb17a32447177963d786a0",
-    "sourceCommit": "d4a9636716f113458bd312e487c065f76548df8c"
+    "mode": "gateway",
+    "slug": "tech-feeds",
+    "gatewaySlug": "tech-feeds",
+    "sourceHash": "v1-23cc68cd7ceeec5369581c09534dc396ca183d660c03bd18e0c8a38b9b10978e",
+    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
   }
 }
